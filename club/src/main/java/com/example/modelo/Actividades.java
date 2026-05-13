@@ -8,7 +8,7 @@ public class Actividades {
     private boolean disponible;
     private LocalDate fechaInicio;
 
-    Actividades(){
+    public Actividades(){
 
     }
 

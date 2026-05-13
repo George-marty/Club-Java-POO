@@ -3,31 +3,38 @@ package com.example;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Scanner;
 
+import com.example.modelo.Actividades;
 import com.example.modelo.Clubes;
+import com.example.servicio.ActividadesServicios;
+import com.example.servicio.Iu;
+import com.example.servicio.impl.ActividadesServicioImpl;
+import com.example.servicio.impl.IuServicioImpl;
 
 public class Main {
     public static void main(String[] args) {
-        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        Scanner sc = new Scanner(System.in); 
-        ArrayList<Clubes> registroClub = new ArrayList<>();
+      ActividadesServicios serviciosActividades = new ActividadesServicioImpl();
+      LinkedList<Actividades> listaActividades = new LinkedList<>();
+      Iu iu = new IuServicioImpl();
 
-        Clubes c2 = new Clubes();
-        System.out.print("Ingrese el nombre de su club: ");
-        String nombre = sc.nextLine();
-        System.out.print("Ingrese la cantidad de socios: ");
-        int socios = sc.nextInt();
-        sc.nextLine();
-        System.out.print("Ingrese la fehca de fundacion: ");
-        String fecha = sc.nextLine();
-        LocalDate fechaFundacion = LocalDate.parse(fecha,formato);
-        Clubes c1 = new Clubes(nombre, socios, false, fechaFundacion);
+      int opcion;
 
-        c2.ingresarDatosClub(registroClub);
-        
-        c1.fichaClub();
+      do {
+        iu.mostrarMenu();
+        opcion = iu.leerOpcion();
 
-        sc.close();
+      switch (opcion) {
+            case 1:
+                Actividades nuevaActividad = serviciosActividades.agregarActividad(listaActividades);
+                listaActividades.add(nuevaActividad);
+                break;
+            case 4:
+              System.exit(0);
+
+        }
+      } while (opcion != 4);
+    
     }
 }
