@@ -1,7 +1,7 @@
 package com.example.modelo;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
+
 
 public class Clubes {
     private String nombre;
@@ -60,19 +60,6 @@ public class Clubes {
     
 
 
-    public void fichaClub(){
-        System.out.println("El nombre del club es: "+this.nombre);
-        System.out.println("la cantidad de socios es de : "+this.socios);
-        System.out.println("El estado actual del club es de :"+this.activo);
-        System.out.println("La fecha de fundacion es de: "+this.fechaFundacion);
-    }
-    
-    public void ingresarDatosClub(ArrayList<Clubes> lista){
-        for (int i = 0; i < 1; i++) {
-            
-            
-        }
-    }
     
     
 

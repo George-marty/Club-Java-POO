@@ -1,6 +1,6 @@
 package com.example.servicio;
 
-public interface Iu {
+public interface interfazServicios {
     void mostrarMenu();
-    int leerOpcion();
+    
 }

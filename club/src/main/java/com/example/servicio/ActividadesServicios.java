@@ -1,12 +1,7 @@
 package com.example.servicio;
-
-
-
-
-import java.util.LinkedList;
-
-import com.example.modelo.Actividades;
+import java.util.Scanner;
 
 public interface ActividadesServicios {
-    public Actividades agregarActividad(LinkedList<Actividades> listaActividades);
+    public void agregarActividad(Scanner sc);
+    void mostrarActividad();
 }
